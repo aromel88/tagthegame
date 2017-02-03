@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Tag Profile</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link rel="stylesheet" type="text/css" href="assets/profile-styles.css"/>
+</head>
+<body>
+  <!-- preload images -->
+  <img src="assets/img/walk/frame-1.png" alt="character" class="preload" />
+  <img src="assets/img/walk/frame-2.png" alt="character" class="preload" />
+  <img src="assets/img/walk/frame-3.png" alt="character" class="preload" />
+  <img src="assets/img/walk/frame-4.png" alt="character" class="preload" />
+  <img src="assets/img/walk/frame-5.png" alt="character" class="preload" />
+  <img src="assets/img/walk/frame-6.png" alt="character" class="preload" />
+
+  
+  <!-- Form to change display name for player -->
+  <div id="animation">
+    <img src="assets/img/walk/frame-1.png" alt="character" id="walk" />
+  </div>
+  
+  <section id="main">
+    <section id="profile">
+      {{#if profile}}
+     
+        <div id="statHeader"><h1>Welcome {{profile.displayName}}!</h1></div>
+        <h2>Your Stats</h2>
+        <div class="stat"><h3>Wins: {{profile.numWins}}</h3></div>
+        <div class="stat"><h3>Losses: {{profile.numLosses}}</h3></div>
+        <div class="stat"><h3>Coins Collected: {{profile.coinsGot}}</h3></div>
+        <div class="stat"><h3>Monsters Killed: {{profile.monstersKilled}}</h3></div>
+      {{else}}
+        <h1 id="noprofile">Welcome Guest!</h1>
+      {{/if}}
+      
+        <!-- Form to input room name and join room to play game -->
+        <h1>Play a Game!</h1>
+        
+        <h2>Single Player Game</h2>
+          <a id="singleSubmit" href="#" class="formSubmit">Play!</a>
+
+          <div id="error">
+            <h3><span id="errorMessage">Error</span></h3>
+          </div>
+        </form>
+    
+        <h2>Multi-Player Game</h2>
+        <form id="roomForm" name="roomForm" action="/joinRoom" method="POST">
+          {{#unless profile}}
+            <input id="displayName" type="text" name="name" placeholder="Display Name"/>
+          {{/unless}}
+          <input id="roomName" type="text" name="room" placeholder="Room Name"/>
+          <input type="hidden" name="_csrf" value={{csrfToken}} />
+          <a id="roomJoinSubmit" href="#" class="formSubmit">Join Room!</a>   
+      </section>
+    
+    {{#if profile}}
+      <a href="/settings" class="formSubmit">Account Settings</a>
+      <a href="/logout" class="formSubmit">Log Out</a>
+    {{else}}
+      <a href="/" class="formSubmit">Home</a>
+    {{/if}}
+  </section>
+  
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="assets/js/profile.js" type="text/babel"></script>
+</body> 
+</html>

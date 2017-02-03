@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Tag</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link rel="stylesheet" type="text/css" href="assets/login-styles.css"/>
+</head>
+<body>
+  
+  <img src="assets/img/walk/yellow-1.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/yellow-2.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/yellow-3.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/yellow-4.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/yellow-5.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/yellow-6.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/yellow-7.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/yellow-8.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/blue-1.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/blue-1.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/pink-2.png" alt="enemy" class="preload" />
+  <img src="assets/img/walk/pink-2.png" alt="enemy" class="preload" />
+
+
+  
+  <div id="hero">
+    <img src="assets/img/walk/yellow-1.png" alt="yellow-enemy" id="yellow-enemy" />
+    <img src="assets/img/walk/blue-1.png" alt="blue-enemy" id="blue-enemy" />
+    <img src="assets/img/walk/pink-1.png" alt="pink-enemy" id="pink-enemy" />
+  </div>
+  
+  
+  <section id="settings" class="formSection">
+    <a id="backlink" href="/profile" class="formSubmit">Back To Profile</a>
+    <h1>Settings for {{username}}</h1>
+    <form id="nameForm" name="nameForm" action="/displayName" method="POST" class="mainForm">
+      <h2>Display Name: {{displayName}}</h2>
+      <input id="newName" type="text" name="newName" placeholder="display name"/>
+      <input type="hidden" name="_csrf" value={{csrfToken}} />
+      <a id="nameSubmit" href="#" class="formSubmit">Submit</a>
+    </form>
+  
+    <form id="passForm" name="passForm" action="/changePass" method="POST" class="mainForm">
+      <input id="oldpass" type="password" name="oldpass" placeholder="old password"/>
+      <input id="newpass" type="password" name="newpass" placeholder="new password"/>
+      <input id="newpass2" type="password" name="newpass2" placeholder="retype password"/>
+
+      <input type="hidden" name="_csrf" value={{csrfToken}} />
+      <a id="passSubmit" href="#" class="formSubmit">Submit</a>
+    </form>
+     <div id="error">
+      <h3><span id="errorMessage">Error</span></h3>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="assets/js/settings.js" type="text/babel"></script> 
+</body>
+</html>

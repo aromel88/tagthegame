@@ -1,0 +1,67 @@
+body {
+  font-family: Oswald, sans-serif;
+  color: white;
+  text-decoration: none;
+  background-image: url("img/pageBg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0,0,0,0.2);
+  width: 99%;
+  opacity: 0.3%;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+input[type="text"] {
+  font-size: 1.2em;
+}
+
+.preload {
+  display: none;
+}
+
+#animation {
+  display: none;
+  width: 30%;
+  float: left;
+}
+
+#walk: {
+  width: 80%;
+  margin-left: 50%;
+}
+
+#main {
+  width: 69%;
+  margin: auto;
+  margin-top: 200px;
+  text-align: center;
+}
+
+#statHeader {
+  font-size: 2em;
+}
+
+.formSubmit {
+  transition: background-color 0.4s ease;
+  display: inline;
+  margin-top: 24px;
+  font-size: 1.2em;
+  width: 100px;
+  background-color: #55acee;
+  padding: 3px 0px;
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.formSubmit:hover {
+  background-color: black;
+}
+
+#error {
+  display: none;
+  color: red;
+}

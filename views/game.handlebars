@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/game-styles.css" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> 
+  <script src="/socket.io/socket.io.js"></script>
+  <title>Boing!</title>
+</head>
+<body>
+  
+  <input type="hidden" id="nameinput" value={{displayName}} />
+  <input type="hidden" id="roominput" value={{roomName}} />
+  <input type="hidden" id="gametype" value={{gametype}} />
+  <input type="hidden" id="levelNum" value={{levelNum}} />
+  <input type="hidden" id="csrf" name="_csrf" value={{csrfToken}} />
+  
+  <div id="loading">
+    <h1>L O A D I N G . . .</h1>
+  </div>
+  
+  <div id="waiting">
+      <h1>Waiting for opponent . . .</h1>
+  </div>
+  
+  <div id="playarea">
+    <canvas>
+      Get a real browser!
+    </canvas>
+    <div id="ingameUI">
+      <a href="/singleGame/{{levelNum}}" class="submit">Replay Level</a>
+      <a href="/profile" class="submit">Back To Profile</a>
+    </div>
+  </div>
+  
+  <div id="gameOver">
+    <div id="singleWin">
+      <h1>You Win!</h1>
+      <a href="/singleGame/{{levelNum}}" class="submit">Restart Level</a>
+      <a href="/profile" class="submit">Back To Profile</a>
+      {{#if nextLevel}}      
+        <a href="/singleGame/{{nextLevel}}" class="submit">Next Level</a>
+      {{/if}}
+    </div>
+    
+    <div id="singleLose">
+      <h1>Level Failed</h1>
+      <a href="/singleGame/{{levelNum}}" class="submit">Retry Level</a>
+      <a href="/profile" class="submit">Back To Profile</a>
+    </div>
+    
+    <div id="gameFinished">
+      <h1>Time's Up!</h1>
+      <h2 id="winner">The winner is Lynx!</h2>
+      <h3 id="winner-coins">20 coins</h3>
+      <h3 id="winner-kills">25 kills</h3>
+
+
+      <h2 id="loser">Stats for Bob</h2>
+      <h3 id="loser-coins">10 coins</h3>
+      <h3 id="loser-kills">15 kills</h3>
+      <a href="/profile" class="submit">Back To Profile</a>
+    </div>
+    
+    <div id="disconnected">
+      <h1>Oops!..</h1>
+      <h2>The other player has disconnected</h2>
+      <a href="/profile" class="submit">Back To Profile</a>
+    </div>
+    
+    <div id="fullRoom">
+      <h1>Oops!..</h1>
+      <h2>That room already has two players</h2>
+      <a href="/profile" class="submit">Back To Profile</a>
+    </div>
+  </div>
+  
+  <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+  <script src="/assets/lib/preloadjs-0.6.1.min.js"></script>
+  <script type="text/babel" src='/assets/js/game.bundle.js'></script>
+</body>
+</html>

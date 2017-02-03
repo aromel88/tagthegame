@@ -1,0 +1,22 @@
+<level>
+   <platform x='232' y='395' width='100' />
+   <platform x='400' y='365' width='100' />
+   <platform x='598' y='392' width='100' />
+   <platform x='271' y='301' width='45' />
+   <platform x='542' y='267' width='245' />
+   <platform x='328' y='204' width='100' />
+   <platform x='167' y='168' width='100' />
+   <coin x='400' y='420' />
+   <coin x='167' y='125' />
+   <monster x='232' y='370' dir='0' lb='182' rb='282' type='p' speed='125'/>
+   <monster x='542' y='242' dir='1' lb='419' rb='665' type='y' speed='100'/>   
+   <monster x='400' y='425' dir='1' lb='0' rb='800' type='b' speed='150'/>
+</level>
+
+<!-- 
+  for monsters, if on platform bounds should be platform position +- platform width/2
+  the y position should be platform y position - 25
+
+  if on the ground the bounds should be 0 and 800
+  the y position should be 425
+-->

@@ -1,0 +1,16 @@
+<level>
+   <player x='400' y='362' dir='0' />
+   <platform x='400' y='395' width='100' />
+   <monster x='632' y='425' dir='0' lb='0' rb='800' type='y' speed='150' />
+   <monster x='158' y='425' dir='1' lb='0' rb='800' type='y' speed='150' />
+   <monster x='280' y='425' dir='1' lb='0' rb='800' type='p' speed='200' />   
+   <monster x='508' y='425' dir='0' lb='0' rb='800' type='p' speed='200' />
+</level>
+
+<!-- 
+  for monsters, if on platform bounds should be platform position +- platform width/2
+  the y position should be platform y position - 25
+
+  if on the ground the bounds should be 0 and 800
+  the y position should be 425
+-->

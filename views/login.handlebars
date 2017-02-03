@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Tag</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link rel="stylesheet" type="text/css" href="assets/login-styles.css"/>
+</head>
+<body>
+  <div id="hero">
+    <img src="assets/img/hero_red.png" alt="player1" id="hero-red" />    
+    <img src="assets/img/hero_green.png" alt="player2" id="hero-green" />
+  </div>
+  <section id="login" class="formSection">
+    <form id="loginForm" name="loginForm" action="/login" method="POST" class="mainForm">
+      <input id="l_user" type="text" name="username" placeholder="username"/>
+      <input id="l_pass" type="password" name="pass" placeholder="password"/>
+      <input type="hidden" name="_csrf" value={{csrfToken}} />
+      <a id="loginSubmit" href="#" class="formSubmit">Sign In</a>
+      <a id="signuplink" href="#" class="formSubmit">Sign Up</a>
+      <a id="guestlink" href="#" class="formSubmit">Play as Guest</a>
+    </form>
+    <div id="loginError">
+        <h3><span id="loginErrorMessage">Wrong username or password</span></h3>
+    </div>
+  </section>
+  
+  <section id="signup" class="formSection">
+    <form id="signupForm" name="signupForm" action="/signup" method="POST" class="mainForm">
+      <input id="s_user" type="text" name="username" placeholder="username"/>
+      <input id="s_pass" type="password" name="pass" placeholder="password"/>
+      <input id="s_pass2" type="password" name="pass2" placeholder="retype password"/>
+      <input type="hidden" name="_csrf" value={{csrfToken}} />
+      <a id="signupSubmit" href="#" class="formSubmit">Sign Up</a>
+      <a id="backlink" href="#" class="formSubmit">Back</a>
+    </form>
+     <div id="signupError">
+      <h3><span id="signupErrorMessage">Error</span></h3>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="assets/js/login.js" type="text/babel"></script> 
+</body>
+</html>
